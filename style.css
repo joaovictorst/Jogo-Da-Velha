@@ -1,0 +1,117 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(90deg, rgb(179, 18, 55) 0%, rgb(240, 56, 19) 100%);
+}
+
+.quadro{
+  display: grid;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+}
+
+
+/* casa do Quadro */
+.casa{
+  width: 100px;
+  height: 100px;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.casa.x,
+.casa.circulo {
+  cursor: not-allowed;
+}
+
+.casa:nth-child(1),
+.casa:nth-child(2),
+.casa:nth-child(3) {
+  border-top: none;
+}
+
+.casa:nth-child(1),
+.casa:nth-child(4),
+.casa:nth-child(7) {
+  border-left: none;
+}
+
+.casa:nth-child(3),
+.casa:nth-child(6),
+.casa:nth-child(9) {
+  border-right: none;
+}
+
+.casa:nth-child(7),
+.casa:nth-child(8),
+.casa:nth-child(9) {
+  border-bottom : none;
+}
+
+/* x */
+
+.casa.x::before,
+.casa.x::after,
+.quadro.x .casa:not(.x):not(.circulo):hover::after,
+.quadro.x .casa:not(.x):not(.circulo):hover::before {
+  content:"";
+  height: calc(100px * 0.15);
+  width: calc(100px * 0.9);
+  background: white;
+  position: absolute;
+}
+
+.casa.x::before,
+.quadro.x .casa:not(.x):not(.circulo):hover::before{
+  transform: rotate(45deg);
+}
+
+.casa.x::after,
+.quadro.x .casa:not(.x):not(.circulo):hover::after{
+  transform: rotate(-45deg);
+}
+
+/* circulo */
+.casa.circulo::before,
+.casa.circulo::after,
+.quadro.circulo .casa:not(.x):not(.circulo):hover::after,
+.quadro.circulo .casa:not(.x):not(.circulo):hover::before {
+  content:"";
+  height: calc(100px * 0.9);
+  width: calc(100px * 0.9);
+  background: white;
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* mensagem do ganhador */
+.ganhador{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  flex-direction: column;
+}
+
+
+
