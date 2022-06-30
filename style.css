@@ -119,12 +119,14 @@ body{
   justify-content: center;
   flex-direction: column;
   box-shadow: 6px 6px 25px black ;
+  transition: all 2s ease;
 }
 
 .placar h1 {
   align-self: center;
   text-transform: uppercase;
   font-size: 1rem;
+  transition: all 2s ease;
 }
 
 .placar-x{
@@ -132,7 +134,7 @@ body{
   border-radius: 4px;
   display: flex;
   gap: 70px;
-  padding: 0px 10px;
+  padding: 0px 10px;  
 }
 
 .placar-circulo{
